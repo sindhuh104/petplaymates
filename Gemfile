@@ -18,7 +18,8 @@ gem 'stripe'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-sass"
 gem 'ratyrate'
-
+gem 'cloudinary'
+gem 'carrierwave'
 
 gem 'sqlite3'
 # Use Puma as the app server

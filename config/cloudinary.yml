@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: duoev5w14
+  api_key: '515996493322649'
+  api_secret: C-0_7YXGLRQlGihqjAODn68KCPE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: duoev5w14
+  api_key: '515996493322649'
+  api_secret: C-0_7YXGLRQlGihqjAODn68KCPE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: duoev5w14
+  api_key: '515996493322649'
+  api_secret: C-0_7YXGLRQlGihqjAODn68KCPE
+  enhance_image_tag: true
+  static_image_support: false

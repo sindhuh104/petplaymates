@@ -45,7 +45,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @profile.photo %>
+  <%= image_tag(@profile.picture_url(:thumbnail), :height=>50, :width=>50) %>
 </p>
 
 <%if current_user.profile == @profile%> 
