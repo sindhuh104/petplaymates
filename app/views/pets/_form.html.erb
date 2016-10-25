@@ -1,0 +1,16 @@
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: "pets name" %>
+    <%= f.input :breed %>
+    <%= f.input :age %>
+    <%= f.input :size, collection: ['v small', 'small', 'medium', 'large', 'v large'] %>
+    <%= f.input :photo %>
+    <%= f.input :availability, placeholder: 'what time adn day is ur dog available' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
