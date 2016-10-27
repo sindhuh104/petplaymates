@@ -5,7 +5,11 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
-  end
+    @hash = Gmaps4rails.build_markers(@profile) do |profile, marker|
+      marker.lat profile.latitude
+      marker.lng profile.longitude
+    end  
+end
 
   # GET /profiles/1
   # GET /profiles/1.json
