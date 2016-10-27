@@ -6,8 +6,8 @@
     <%= f.input :breed %>
     <%= f.input :age %>
     <%= f.input :size, collection: ['Very small', 'Small', 'Medium', 'Large', 'Very LARGE'] %>
-    <%= f.input :photo %>
     <%= f.input :availability, placeholder: 'What TIME and DAY is YOUR dog AVAILABLE?' %>
+    <%= f.input :picture, as: :file %>
   </div>
 
   <div class="form-actions">

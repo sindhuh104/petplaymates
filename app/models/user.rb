@@ -11,7 +11,7 @@ class User < ApplicationRecord
    	def assign_role 	
    		# self.assign_role would be an instance method 
    		if user_type == 'owner'
-   			add_role :owner 
+   			add_role :admin 
    		end
    	end 
 end

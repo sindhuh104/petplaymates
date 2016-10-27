@@ -48,11 +48,32 @@
   <%= image_tag(@profile.picture_url(:thumbnail), :height=>50, :width=>50) %>
 </p>
 
+<p> 
+  <strong> Lat: </strong>
+    <%=@profile.latitude %> 
+</p> 
+
+<p> 
+  <strong> Long: </strong> 
+    <%= @profile.latitude%> 
+</p> 
+
+
+
 <%if current_user.profile == @profile%> 
   <%= link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-primary' %> 
 <% end %> 
 
-</div></div></div>
+</div>
+
+<div style='width: 800px;'> 
+<div id='map' style='width: 800px; height: 400px;'></div>
+</div> 
+
+
+
+</div>
+</div>
 
 <div class="col-md-4"> 
   <% @profile.user.pets.each do |pet| %> 

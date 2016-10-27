@@ -13,6 +13,7 @@ gem 'country_select'
 gem 'rolify'
 gem 'cancancan'
 gem 'geocoder'
+gem 'gmaps4rails'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'stripe'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -20,6 +21,8 @@ gem "font-awesome-sass"
 gem 'ratyrate'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'better_errors'
+gem 'friendly_id'
 
 gem 'sqlite3'
 # Use Puma as the app server
