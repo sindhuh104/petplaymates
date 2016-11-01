@@ -7,4 +7,8 @@ class Pet < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged 
   # name can be replaced by breed 
+
+  def self.with_picture
+  	where('picture IS NOT NULL')
+  end 
 end
