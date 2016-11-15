@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pet.name %>
-</p>
+<div class="row"> 
+  <div class="col-md-4"> 
+    <div class="panel panel-default"> 
+      <div class="panel-body"> 
+
+<%= image_tag @pet.picture_url, class: 'img-responsive img-thumbnail'%> 
+<p class="lead"><strong> <%= @pet.name%> </strong></p> 
+
 
 <p>
   <strong>Breed:</strong>
@@ -20,20 +24,25 @@
   <%= @pet.size %>
 </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag(@pet.picture_url(:thumbnail), :height=>50, :width=>50)%>
-</p>
 
 <p>
   <strong>Availability:</strong>
   <%= @pet.availability %>
 </p>
 
-<p>
+<!-- <p>
   <strong>User:</strong>
   <%= @pet.user %>
-</p>
+</p> -->
 
-<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<!-- the bit inside the new booking path is the parameter that gets passed to the next page -->
+<%= link_to 'Make a booking', new_booking_path(pet: @pet.id), class: "btn btn-success btn-lg btn-block"%> 
+<br>  
+
+<!-- need the first line because the second if statement will break if a user isnt signed in -->
+<% if user_signed_in? %> 
+  <%= link_to 'Edit', edit_pet_path(@pet), class: "btn btn-info btn-lg btn-block" if current_user.pets.include?(@pet) %> 
+<% end %> 
+
+</div></div></div></div> 
 

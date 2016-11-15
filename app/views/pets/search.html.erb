@@ -1,0 +1,15 @@
+<div class="row"> 
+<%@nearby_profiles.each do |profile| %> 
+<!-- For each profile, find the user and the associated pets  -->
+	<% profile.user.pets.each do |pet| %> 
+		<div class="col-md-3"> 
+		<div class="panel panel-defaul"> 
+			<div class="panel-body"> 
+				<%= image_tag(pet.picture_url(:thumbnail), class:'img-responsive') %> 
+				<br> 
+				<%=pet.name %> 
+		</div> 
+	</div> 
+	<%end %> 
+<%end %> 
+</div> 

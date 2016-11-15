@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :pets
+  resources :bookings
+  resources :pets do 
+  	collection do 
+  		post :search 
+  	end 
+  end 
   resources :profiles
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, controllers: {registrations: "registrations"}

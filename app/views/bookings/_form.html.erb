@@ -1,0 +1,24 @@
+  <div class="col-md-4 col-md-offset-2"> 
+      <div class="panel panel-default"> 
+      <div class="panel-body"> 
+<%= image_tag @pet.picture_url, width: '100px'%> 
+<p><b> Name: </b><%= @pet.name %> </p> 
+<p><b> Owner: </b><%= @pet.user.profile.full_name%> </p>
+<p><b> Address: </b><%= @pet.user.profile.full_street_address %></p>
+
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+
+
+       <div class="form-inputs">
+        <%= f.input :date, discard_year: true, order: [:day, :month] %>
+        <%= f.input :start_time %>
+        <%= f.input :end_time %>
+        <%= f.input :pet_id, input_html: {value: @pet.id} %> 
+        </div>
+
+       <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-success" %>
+      </div> </div> </div> </div> 
+<% end %> 

@@ -1,5 +1,8 @@
 class Pet < ApplicationRecord
   belongs_to :user
+  has_many :pet_bookings
+  has_many :bookings, through: :pet_bookings
+    
      mount_uploader :picture, PetProfilePictureUploader 
 
   validates :name, :age, :breed, :size, :availability, presence: true 

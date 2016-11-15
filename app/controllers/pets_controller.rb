@@ -1,6 +1,12 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource 
+  skip_before_action :authenticate_user!, only: [:search, :index, :show]
+
+
+  def search
+    @nearby_profiles = Profile.includes(user: :pets).near(params[:area]+ 'Australia', 5, units: :km)
+  end 
 
   # GET /pets
   # GET /pets.json

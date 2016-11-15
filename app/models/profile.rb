@@ -15,4 +15,8 @@ class Profile < ApplicationRecord
   	[street, suburb, state, country].compact.join(',')
   end 
 
+  def full_name 
+    [first_name, last_name].join(' ')
+  end 
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027080420) do
+ActiveRecord::Schema.define(version: 20161103075456) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20161027080420) do
     t.float    "avg",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.text     "review"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -39,6 +50,15 @@ ActiveRecord::Schema.define(version: 20161027080420) do
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "pet_bookings", force: :cascade do |t|
+    t.integer  "pet_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_pet_bookings_on_booking_id"
+    t.index ["pet_id"], name: "index_pet_bookings_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
